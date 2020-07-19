@@ -11,11 +11,10 @@ public class Week4Assignment {
 
 	private static void displayMenu() {
 
-		double Length;
-        double Width;
-        double Height;
-        double Area;
-        double Volume;		
+		double Length = 0;
+        double Width =0;
+        double Height= 0;
+       	
      
         
         Scanner input = new Scanner(System.in);
@@ -27,12 +26,15 @@ public class Week4Assignment {
         Height = input.nextDouble();
         System.out.printf("Enter the box width:" );
         Width = input.nextDouble();
-        Area = 2*Length*Width + 2 *Length * Height + 2*Height* Width;
-        Volume = Length * Height * Width;
-        System.out.printf("The area of your rectangle is :%.2f\n",  Area);
-        System.out.printf("The volume of your rectangle is :%.2f\n", Volume);  
-        input.close();
-	}
-
+        System.out.printf("Your Surface Area is : %,.2f%n",+ SurfaceArea(Length, Width, Height));
+    	System.out.printf("Your Volume is : %,.2f%n", +Volume(Length,Width,Height));
+    	}
+    	private static double SurfaceArea (double W, double L, double H) {
+    		return (2*L*W+2*W*H+2*H*L);
+    	}
+    	private static double Volume (double W, double L, double H) {
+    		return (L*W*H);
+    	}
 }
-
+        
+	
